@@ -1,0 +1,15 @@
+.vs/
+vs/
+obj
+bin
+Library
+Logs
+Packages
+
+.vsconfig
+Assembly-CSharp-Editor.csproj
+UpgradeLog.htm
+ProjectSettings
+Temp/*
+Temp/
+Temp
