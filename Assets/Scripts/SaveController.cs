@@ -7,11 +7,13 @@ using UnityEngine.Experimental.AI;
 public class SaveController : MonoBehaviour
 {
     private InventoryController inventoryController;
+    private HotbarController hotbarController;
     private string saveLocation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         inventoryController = FindFirstObjectByType<InventoryController>();
+        hotbarController = FindFirstObjectByType<HotbarController>();
         Debug.Log("Start function called in SaveController.");
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
         Debug.Log($"save location: {saveLocation}");
@@ -46,7 +48,8 @@ public class SaveController : MonoBehaviour
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
             mapBoundary = GameObject.FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D.gameObject.name,
-            inventoryData = inventoryController.GetInventoryItems()
+            inventoryData = inventoryController.GetInventoryItems(),
+            hotbarData = hotbarController.GetHotbarItems()
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -54,14 +57,17 @@ public class SaveController : MonoBehaviour
 
     public void LoadGame()
     {
+        
         if (File.Exists(saveLocation))
         {
             Debug.Log("Save found. Saving Game...");
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
             GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
             GameObject.FindFirstObjectByType<CinemachineConfiner2D>().BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
+            
 
             inventoryController.SetInventoryItems(saveData.inventoryData);
+            hotbarController.SetHotbarItems(saveData.hotbarData);
 
         }
         else

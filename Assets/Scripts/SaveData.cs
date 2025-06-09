@@ -10,5 +10,6 @@ public class SaveData
     public Vector3 playerPosition;
     public string mapBoundary;
     public List<InventorySaveData> inventoryData;
+    public List<InventorySaveData> hotbarData;
 
 }

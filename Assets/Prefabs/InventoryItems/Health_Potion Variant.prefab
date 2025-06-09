@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: ID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: Name
+      value: Health Potion
+      objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -55,6 +59,18 @@ PrefabInstance:
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class PickupItem : MonoBehaviour
+public class PickupItem : Item
 {
-    public int ID;
-    public string Name;
+    //public int ID;
+    //public string Name;
     public CircleCollider2D collider;
     private GameObject inventoryPanel;
     public InventoryController inventoryController;
     public GameObject pickupPrefab;
+    private HotbarController hotbarController;
     private void Awake()
     {
         if(inventoryPanel == null)
@@ -15,8 +16,9 @@ public class PickupItem : MonoBehaviour
             inventoryPanel = GameObject.FindWithTag("InventoryPanel");
         }
         inventoryController = GameObject.FindFirstObjectByType<InventoryController>();
+        hotbarController = GameObject.FindFirstObjectByType<HotbarController>();
     }
-    public virtual void Pickup()
+    public override void Pickup()
     {
         //test
         //inventoryController.AddItem(GetComponent())
@@ -36,7 +38,12 @@ public class PickupItem : MonoBehaviour
         
         if(collision.gameObject.tag == "Player")
         {
-            Pickup();
+
+            if (!hotbarController.AddItem(pickupPrefab.GetComponent<Item>().ID))
+            {
+                Pickup();
+                
+            }
             Destroy(pickupPrefab);
         }
     }
