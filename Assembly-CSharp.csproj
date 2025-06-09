@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Inventory\InventoryController.cs" />
+    <Compile Include="Assets\Scripts\Hotbar\HotbarController.cs" />
     <Compile Include="Assets\Scripts\UI_Scripts\TabController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Misc\ExtraLinks.cs" />
@@ -72,7 +73,6 @@
     <Compile Include="Assets\Scripts\ItemPopupController.cs" />
     <Compile Include="Assets\Scripts\SaveController.cs" />
     <Compile Include="Assets\Scripts\UI_Scripts\Slot.cs" />
-    <Compile Include="Assets\Scripts\Hotbar\HotbarController.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemsDictionary.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Tilemap_Scripts\Elevation_entry.cs" />
@@ -83,7 +83,6 @@
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Managers\UISettingsManager.cs" />
     <Compile Include="Assets\Scripts\Shared\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\UI_Scripts\MenuController.cs" />
-    <Compile Include="Assets\Scripts\Pickups\PickupItem.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ThemeEditor\ThemedUIData.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\Audio\CheckMusicVolume.cs" />
     <Compile Include="Assets\Scripts\Inventory\ItemDraghandler.cs" />
@@ -1306,6 +1305,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Scripts\Pickups\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

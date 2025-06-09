@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2356132940987635879, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2489364457448930302, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -27,6 +31,14 @@ PrefabInstance:
     - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: Name
       value: Health Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: MaxDropDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: minDropDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_Pivot.x
@@ -62,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalScale.z
@@ -127,6 +139,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1424147035166866258, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458823883684544866}
+    - targetCorrespondingSourceObject: {fileID: 1424147035166866258, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4044340136337700744}
   m_SourcePrefab: {fileID: 100100000, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
 --- !u!1 &4981045113236885630 stripped
 GameObject:
@@ -188,3 +203,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &-4044340136337700744
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981045113236885630}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1

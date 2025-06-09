@@ -36,6 +36,18 @@ PrefabInstance:
       propertyPath: Name
       value: Mana Potion
       objectReference: {fileID: 0}
+    - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: dropScale
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: MaxDropDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195283879239787387, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      propertyPath: minDropDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -70,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9213731775399727773, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,6 +143,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1424147035166866258, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6511134252078221112}
+    - targetCorrespondingSourceObject: {fileID: 1424147035166866258, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3656573837307298495}
   m_SourcePrefab: {fileID: 100100000, guid: f313e10f3afcefa44bf1694a1633fd62, type: 3}
 --- !u!1 &4981045113236885630 stripped
 GameObject:
@@ -192,3 +207,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &-3656573837307298495
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4981045113236885630}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 4.9999995

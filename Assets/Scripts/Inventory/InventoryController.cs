@@ -97,6 +97,7 @@ public class InventoryController : MonoBehaviour
                     GameObject item = Instantiate(itemPrefab, slotTransform);
                     item.GetComponent<Image>().color = Color.white;
                     item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                    item.GetComponent<RectTransform>().transform.localScale = Vector2.one;
                     slot.currentItem = item;
                 }
                 else
@@ -146,6 +147,7 @@ public class InventoryController : MonoBehaviour
                     item.GetComponent<Image>().color = Color.white;
                         slot.currentItem = item;
                      item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                    item.GetComponent<RectTransform>().transform.localScale = Vector2.one;
 
                 }
                 else

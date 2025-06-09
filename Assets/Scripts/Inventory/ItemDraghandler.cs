@@ -8,7 +8,11 @@ public class ItemDraghandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     Slot currentSlot;
     Slot dropSlot;
     
-    
+    public bool IsWithinInventory(Vector2 mousePosition)
+    {
+        RectTransform inventoryRect = currentSlot.transform.parent.GetComponent<RectTransform>();
+        return RectTransformUtility.RectangleContainsScreenPoint(inventoryRect, mousePosition);
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
 
@@ -44,14 +48,23 @@ public class ItemDraghandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         Debug.Log($"dropSlot is {dropSlot?.name}");
         if (!dropSlot)
         {
+
             Debug.Log("No Slot found. ");
             //check if its on top of another item
             GameObject item = eventData?.pointerEnter;
 
             //if the GameObject isn't another item or another slot, then we should return it to its original position
-
+            
             if(!item?.GetComponent<Slot>() && !item?.GetComponentInParent<Slot>())
             {
+                if (!IsWithinInventory(eventData.position))
+                {
+                    currentSlot.currentItem.GetComponent<Item>().Drop();
+                    Destroy(currentSlot.currentItem.gameObject);
+                    return;
+                }
+                
+                
                 Debug.Log("You did NOT click a slot or an item. Resetting...");
                 currentSlot.currentItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; 
             }
