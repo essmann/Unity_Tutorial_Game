@@ -2,6 +2,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///Class <c>ItemsDictionary</c> Dictionary where the key is the ID of the Item and the Value is the prefab of that item (e.g. the image, scripts etc).
+/// </summary>
 public class ItemsDictionary : MonoBehaviour
 {
     public List<Item> itemPrefabs;

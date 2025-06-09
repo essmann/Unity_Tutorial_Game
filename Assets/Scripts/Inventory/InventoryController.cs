@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour
 {
@@ -94,6 +95,7 @@ public class InventoryController : MonoBehaviour
                 if (itemPrefab != null)
                 {
                     GameObject item = Instantiate(itemPrefab, slotTransform);
+                    item.GetComponent<Image>().color = Color.white;
                     item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                     slot.currentItem = item;
                 }
@@ -107,6 +109,53 @@ public class InventoryController : MonoBehaviour
                 Debug.LogWarning("Invalid save data entry: null or index out of bounds.");
             }
         }
+    }
+
+    
+    public void AddItem(GameObject itemPrefab)
+    {
+        
+        foreach(Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if(slot && slot.currentItem == null)
+            {
+                GameObject addedItem = Instantiate(itemPrefab, slot.transform);
+                slot.currentItem = addedItem;
+                addedItem.GetComponent<Image>().color = Color.white;
+
+                addedItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                return;
+            }
+           
+        }
+        
+    }
+    public void AddItem(int ID)
+    {
+
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot && slot.currentItem == null)
+            {
+                GameObject addedItem = itemDictionary.GetItem(ID);
+                if (addedItem)
+                {
+                     GameObject item = Instantiate(addedItem, slot.transform);
+                    item.GetComponent<Image>().color = Color.white;
+                        slot.currentItem = item;
+                     item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+
+                }
+                else
+                {
+                    Debug.LogWarning($"No item with the ID {ID} exists.");
+                }
+                return;
+            }
+        }
+
     }
 
 }
